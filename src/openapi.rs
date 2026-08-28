@@ -165,6 +165,8 @@ use utoipa::OpenApi;
         // Wallets
         crate::api::wallets::get_activity_calendar,
         crate::api::wallets::get_largest_transfers,
+        // Overview
+        crate::api::analytics_dashboard::get_stats_summary,
     ),
     components(
         schemas(
@@ -190,9 +192,12 @@ use utoipa::OpenApi;
             crate::api::wallets::TransferDirection,
             crate::api::wallets::LargestTransfer,
             crate::api::wallets::LargestTransfersResponse,
+            crate::api::analytics_dashboard::StatWithDelta,
+            crate::api::analytics_dashboard::StatsSummary,
         )
     ),
     tags(
+        (name = "Overview", description = "Homepage summary/stat-tile endpoints"),
         (name = "Alerts", description = "Alert management and notification endpoints"),
         (name = "Analytics", description = "API analytics endpoints"),
         (name = "Anchors", description = "Anchor management and metrics endpoints"),
