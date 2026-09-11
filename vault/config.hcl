@@ -1,4 +1,4 @@
-# Vault Configuration for Stellar Insights
+# Vault Configuration for Stellar Analysis
 
 # Storage backend
 storage "file" {

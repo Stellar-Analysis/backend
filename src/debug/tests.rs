@@ -3,7 +3,7 @@
 //! These tests are the safety net for [#104]'s acceptance criterion
 //! "debug tools are gated to development and never exposed in production".
 //!
-//! [#104]: https://github.com/Stellar-Insightss/Stellar-inights/issues/104
+//! [#104]: https://github.com/Stellar-Analysis/frontend/issues/104
 
 use super::*;
 use std::sync::{Mutex, MutexGuard};

@@ -13,7 +13,7 @@ use std::str::FromStr;
 use std::sync::Arc;
 use tower::ServiceExt;
 
-use stellar_insights_backend::ip_whitelist_middleware::{
+use stellar_analysis_backend::ip_whitelist_middleware::{
     ip_whitelist_middleware, IpWhitelistConfig,
 };
 

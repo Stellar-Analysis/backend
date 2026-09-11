@@ -24,7 +24,7 @@
 //! Combine with the existing structured-logging convention:
 //!
 //! ```text
-//! SI_DEBUG=1 RUST_LOG=stellar_insights=debug,debug=trace cargo run
+//! SI_DEBUG=1 RUST_LOG=stellar_analysis=debug,debug=trace cargo run
 //! ```
 //!
 //! # Module structure
@@ -36,7 +36,7 @@
 //! - [`inspect_request`] — convenience wrapper used at request entry
 //!   boundaries.
 //! - [`PerformanceTimer`] — Drop-based timer that records elapsed wall-clock
-//!   time to the `stellar_insights::debug` tracing target when dropped.
+//!   time to the `stellar_analysis::debug` tracing target when dropped.
 //! - [`log_route_table`] — dev-only helper that prints the registered axum
 //!   routes. No-op in release.
 //!
@@ -128,7 +128,7 @@ impl DebugInspector {
             return;
         }
         tracing::info!(
-            target: "stellar_insights::debug",
+            target: "stellar_analysis::debug",
             request_id = self.request_id.as_deref().unwrap_or("-"),
             method = self.method.as_deref().unwrap_or("-"),
             path = self.path.as_deref().unwrap_or("-"),
@@ -184,7 +184,7 @@ impl Drop for PerformanceTimer {
             return;
         }
         tracing::info!(
-            target: "stellar_insights::debug",
+            target: "stellar_analysis::debug",
             label = self.label,
             elapsed_ms = self.elapsed_ms() as u64,
             "performance_timer"
@@ -196,7 +196,7 @@ impl Drop for PerformanceTimer {
 /// it's declared in. Use at the top of a function or block.
 ///
 /// ```ignore
-/// use stellar_insights::debug::debug_timer;
+/// use stellar_analysis::debug::debug_timer;
 ///
 /// fn handle() {
 ///     let _t = debug_timer!("handle_request");
@@ -244,7 +244,7 @@ where
         return;
     }
     tracing::info!(
-        target: "stellar_insights::debug",
+        target: "stellar_analysis::debug",
         routes = ?_router.print_routes(),
         "route_table"
     );

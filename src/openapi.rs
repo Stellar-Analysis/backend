@@ -3,11 +3,11 @@ use utoipa::OpenApi;
 #[derive(OpenApi)]
 #[openapi(
     info(
-        title = "Stellar Insights API",
+        title = "Stellar Analysis API",
         version = "1.0.0",
         description = "API for Stellar network analytics, anchor monitoring, and payment corridor insights",
         contact(
-            name = "Stellar Insights Team",
+            name = "Stellar Analysis Team",
             email = "support@stellarinsights.io"
         ),
         license(

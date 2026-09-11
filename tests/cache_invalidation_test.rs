@@ -5,8 +5,8 @@
 //! a live Redis instance.
 
 use std::sync::Arc;
-use stellar_insights_backend::cache::{keys, CacheConfig, CacheManager, CacheStats};
-use stellar_insights_backend::cache_invalidation::CacheInvalidationService;
+use stellar_analysis_backend::cache::{keys, CacheConfig, CacheManager, CacheStats};
+use stellar_analysis_backend::cache_invalidation::CacheInvalidationService;
 
 // ── key-builder helpers ───────────────────────────────────────────────────────
 

@@ -1,8 +1,8 @@
 use anyhow::Result;
 use sqlx::SqlitePool;
 use std::sync::Arc;
-use stellar_insights_backend::database::Database;
-use stellar_insights_backend::services::verification_rewards::{
+use stellar_analysis_backend::database::Database;
+use stellar_analysis_backend::services::verification_rewards::{
     VerificationRewardsService, VerifySnapshotRequest,
 };
 use uuid::Uuid;
